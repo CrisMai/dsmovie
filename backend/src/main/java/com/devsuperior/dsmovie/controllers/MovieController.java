@@ -13,7 +13,6 @@ import com.devsuperior.dsmovie.services.MovieService;
 
 @RestController
 @RequestMapping(value = "/movies")
-
 public class MovieController {
 	
 	@Autowired
@@ -21,6 +20,7 @@ public class MovieController {
 	
 	@GetMapping
 	public Page<MovieDTO> findAll(Pageable pageable) {
+		System.out.println("-------------------- findAll() --------------------");
 		return service.findAll(pageable);
 		
 	}
